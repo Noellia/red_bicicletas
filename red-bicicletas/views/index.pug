@@ -1,5 +1,47 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // Navigation
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container
+      a.navbar-brand(href='#') 
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') About
+          li.nav-item
+            a.nav-link(href='#') Services
+          li.nav-item
+            a.nav-link(href='#') Contact
+  // Header - set the background image for the header in the line below
+  header.py-5.bg-image-full(style="background-image: url('https://i1.wp.com/www.pedalearyviajar.com/wp-content/uploads/2017/10/Amsterdam-bike-5.jpg?resize=700%2C288&ssl=1');")
+  // Content section
+  section.py-5
+    .container
+      h1 Red de Bicicletas
+      p.lead Desarrollo del lado servidor: NodeJS, Express y MongoDB.
+      p
+        | Universidad AUSTRAL
+  // Content section
+  section.py-5
+    .container
+     #main_map
+  // Image element - set the background image for the header in the line below
+  .py-5.bg-image-full(style="background-image: url('https://cdn.civitatis.com/paises-bajos/amsterdam/guia/bicicleta.jpg');")
+    div(style='height: 200px;')
+  // Put anything you want here! There is just a spacer below for demo purposes!
+  // Footer
+  footer.py-5.bg-dark
+    .container
+      p.m-0.text-center.text-white Copyright &copy; Your Website 2020
+    // /.container
+  // Bootstrap core JavaScript
+  script(src='stylesheets/vendor/jquery/jquery.min.js')
+  script(src='stylesheets/vendor/bootstrap/js/bootstrap.bundle.min.js')
+  script(src='javascripts/map.js')
